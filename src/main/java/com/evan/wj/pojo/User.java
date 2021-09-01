@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +24,10 @@ public class User {
   private String name;
   private String phone;
   private String email;
-  private long enabled;
+  private boolean enabled;
+
+  @Transient
+  private List<String> roles;
 
 
 }
